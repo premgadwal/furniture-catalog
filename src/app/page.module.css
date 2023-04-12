@@ -1,0 +1,155 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 4rem 0;
+}
+
+
+@media (max-width: 1023px) {
+  .center {
+    padding: 8rem 0 6rem;
+  }
+
+  .center::before {
+    transform: none;
+    height: 300px;
+  }
+}
+
+.formdata {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.25rem;
+}
+
+.inputsearch {
+  width: 18.75rem;
+  height: 2.5rem;
+  padding: 0.625rem;
+  border-radius: 0.3125rem;
+  margin: 0 1rem;
+  background: #ded3cb;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1rem;
+}
+
+.inputsearch:focus {
+  width: 18.75rem;
+  height: 2.5rem;
+  padding: 0.625rem;
+  border-radius: 0.3125rem;
+  margin: 0 1rem;
+  font-weight: 300;
+  color: black;
+  outline: none;
+  border-color: #62140a;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  box-shadow: 0 0 0.3rem  #fab281;
+}
+
+.brand {
+  text-align: center;
+  padding: 1rem;
+  font-size: 4rem;
+  color: rgb(87, 63, 8);
+  text-shadow: 0 0.2rem 0.5rem  #62140a5a;
+}
+
+.searchButton {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1rem;
+  width: 5.75rem;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 2.5rem;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  -moz-transition: all 3s ease-in-out;
+  -o-transition: all 3s ease-in-out;
+  -webkit-transition: all 3s ease-in-out;
+  transition: all 3s ease-in-out;
+  background: #fab281;
+}
+
+.searchButton:hover {
+  cursor: default;
+}
+
+.searchButton:hover:not([disabled]) {
+  background-image: linear-gradient(to left, #62140a, #fab281);
+  background-position: 100% 0;
+  -moz-transition: all 3s ease-in-out;
+  -o-transition: all 3s ease-in-out;
+  -webkit-transition: all 3s ease-in-out;
+  transition: all 3s ease-in-out;
+  cursor: pointer;
+}
+
+.searchButton:focus:not([disabled]) {
+  outline: none;
+}
+
+.photoCard {
+  width: 300px;
+  height: auto;
+  margin: 10px;
+}
+
+.photoCard img {
+  width: 100%;
+  height: 80%;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 0.5rem  #62140a5a;
+}
+
+.photoGrid p {
+  text-align: center;
+  font-weight: bold;
+}
+
+.photoGrid {
+  display: grid; 
+  grid-template-columns: repeat(3, auto); 
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin: 0 auto;
+  max-width: 960px;
+  }
+  
+  .card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  }
+  
+  .card img {
+  display: block;
+  max-width: 100%;
+  }
