@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
 
 // Get your API key from https://unsplash.com/developers
-const apiKey = "your_api_key";
+const apiKey = process.env.NEXT_PUBLIC_ACCESS_KEY;
 
 // Define a custom component for displaying a photo card
 const PhotoCard = ({ photo }) => {
@@ -14,7 +14,7 @@ const PhotoCard = ({ photo }) => {
   // Return a JSX element that renders the photo and the user name
   return (
     <div key={id} className={styles.photoCard}>
-      <img src={urls.regular} alt={user.name} />
+      <img src={urls.regular} alt={id} />
     </div>
   );
 };
@@ -43,6 +43,7 @@ const HomePage = () => {
 
   // Define a helper function to fetch photos by query term
   const fetchPhotos = async (query) => {
+    console.log(apiKey);
     // Set the loading status to true
     setLoading(true);
 
@@ -107,7 +108,7 @@ const HomePage = () => {
       </form>
       <div className={styles.center}>
         {loading ? (
-                <h1 className={styles.brand}>Loading...</h1>
+          <h1 className={styles.brand}>Loading...</h1>
         ) : error ? (
           <p>{error}</p>
         ) : (
