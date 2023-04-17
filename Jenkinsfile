@@ -13,17 +13,6 @@ pipeline {
       }
     }
     
-    stage('Provision EC2 Instance') {
-      steps {
-        script {
-          sh "terraform init"
-          sh "terraform apply -auto-approve -var 'instance_name=your-instance-name'"
-          def ipAddress = sh (script: "terraform output public_ip", returnStdout: true).trim()
-          env.IP_ADDRESS = ipAddress
-        }
-      }
-    }
-    
     stage('Deploy Docker Container') {
       steps {
         script {
