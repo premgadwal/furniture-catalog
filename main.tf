@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "aws_instance" "example" {
   ami           = "ami-06e46074ae430fba6"
-  instance_type = "t2.micro"
+  instance_type = "t2.small"
   key_name      = "myapp"
 
   # Replace with your own security group ID
@@ -15,9 +15,6 @@ resource "aws_instance" "example" {
               # Install Docker
               sudo apt-get update
               sudo apt-get install -y docker.io
-              
-              # Run your Next.js app container
-              sudo docker run -p 3000:3000 your-docker-image
               EOF
 }
 resource "aws_key_pair" "mykey" {
