@@ -15,7 +15,6 @@ pipeline {
     stage('Deploy Docker Container') {
       steps {
         script {
-          sh "docker stop punk77/furniture-catalog"
           sh "docker run -d --name punk77/furniture-catalog -p 3000:3000 ${env.DOCKER_IMAGE}"
         }
       }
