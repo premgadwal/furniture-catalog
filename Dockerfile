@@ -1,5 +1,5 @@
 # Set base image
-FROM node:14-alpine
+FROM node:16.20-alpine3.16
 WORKDIR /app
 
 # Copy package.json and yarn.lock files
